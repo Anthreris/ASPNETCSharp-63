@@ -20,7 +20,8 @@ namespace Testing.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var names = new List<string>() { "Garrett", "Arthur", "Kara", "Ira" };
+            return View(names);
         }
 
         public IActionResult Privacy()
