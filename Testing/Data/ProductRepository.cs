@@ -5,7 +5,7 @@ using Testing.Models;
 
 namespace Testing.Data;
 
-public class ProductRepository : IProductReposistory
+public class ProductRepository : IProductRepository
 {
     private readonly IDbConnection _connection;
 

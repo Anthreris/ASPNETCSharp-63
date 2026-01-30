@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
+using Testing.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddScoped<IDbConnection>((s) =>
     conn.Open();
     return conn;
 });    
+
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
